@@ -35,7 +35,7 @@ jobs:
           ECR_REGISTRY: ${{ steps.login-ecr-publico.outputs.registry }}
         uses: docker/build-push-action@v4
         with:
-          context:.
+          context: .
           file: ./Dockerfile
           platforms: linux/amd64,linux/arm64
           push: true
