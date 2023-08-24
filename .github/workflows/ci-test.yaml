@@ -21,8 +21,5 @@ jobs:
       - name: Make gradlew executable
         run: chmod +x ./gradlew
       - name: "ejecutar tests unitarios"
-        #run: "./gradlew clean test --info"
-        with:
-          timeout_minutes: 15
-          max_attempts: 2
-          command: "./gradlew clean test --info"
+        run: "./gradlew clean test --info"
+        
