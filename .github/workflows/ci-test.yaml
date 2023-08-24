@@ -16,7 +16,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           distribution: 'temurin'
-          java-version: 'env.JAVA_VERSION'
+          java-version: $JAVA_VERSION
           cache: 'gradle'
       - name: "gradle build repository"
         run: ./gradlew build --no-daemon
