@@ -10,7 +10,7 @@ on:
         options: ["AWS","GCP","Azure"]
 jobs:
   docker-aws:
-    if: github.event.inputs.cloud. == 'AWS'
+    if: github.event.inputs.cloud == 'AWS'
     runs-on: ubuntu-latest
     steps:
       - name: "Checkout"
