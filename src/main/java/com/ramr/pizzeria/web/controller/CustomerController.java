@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -33,5 +34,15 @@ public class CustomerController {
     @GetMapping("/customer/{id}")
     public ResponseEntity<List<Order>> getCustomerOrders(@PathVariable String id){
         return ResponseEntity.ok(this.orderService.getCustomerOrders(id));
+    }
+
+    @GetMapping
+    public ResponseEntity<List<Customer>> getAllCustomer(){
+        return ResponseEntity.ok(this.customerService.findAll());
+    }
+
+    @PostMapping
+    public ResponseEntity<Customer> saveCustomer(Customer customer){
+        return ResponseEntity.ok(this.customerService.save(customer));
     }
 }
