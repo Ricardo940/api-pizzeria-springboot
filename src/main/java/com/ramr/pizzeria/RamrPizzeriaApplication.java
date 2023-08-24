@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
 @EnableJpaRepositories
-@EnableJpaAuditing
+//@EnableJpaAuditing
 public class RamrPizzeriaApplication {
 
 	public static void main(String[] args) {
