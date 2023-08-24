@@ -7,11 +7,11 @@ env:
   JAVA_VERSION: 17
 
 jobs:
-  lint:
+  tests:
     runs-on: ubuntu-latest
     steps:
       - name: "Checkout repository"
-        uses: actions/checkout@v3   #24cb9080177205b6e8c946b17badbe402adc938f #v3: v3.4.0
+        uses: actions/checkout@24cb9080177205b6e8c946b17badbe402adc938f #v3: v3.4.0
       - name: "java JDK"  
         uses: actions/setup-java@v3
         with:
@@ -20,5 +20,9 @@ jobs:
           cache: 'gradle'
       - name: Make gradlew executable
         run: chmod +x ./gradlew
-      - name: "gradle build repository"
-        run: ./gradlew build --no-daemon
+      - name: "ejecutar tests unitarios"
+        #run: "./gradlew clean test --info"
+        with:
+          timeout_minutes: 15
+          max_attempts: 2
+          command: "./gradlew clean test --info"
