@@ -1,11 +1,5 @@
-FROM openjdk:17-jdk
-EXPOSE 8080
-RUN mkdir -p /app/
-ADD build/libs/ramr-pizzeria-0.0.1-SNAPSHOT.jar /app/ramr-pizzeria-0.0.1-SNAPSHOT.jar
-ENTRYPOINT ["java", "-jar", "/app/ramr-pizzeria-0.0.1-SNAPSHOT.jar"]
-
 # Usar la imagen de OpenJDK para compilar
-FROM openjdk:17 AS build
+FROM openjdk:17-jdk AS build
 
 # Copiar el código fuente y las dependencias al contenedor
 WORKDIR /app
