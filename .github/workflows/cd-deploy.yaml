@@ -7,11 +7,11 @@ on:
         description: "Cloud"
         required: true
         default: "AWS"
-        options: ["AWS", "GCP": "Azure"]
+        options: ["AWS", "GCP", "Azure"]
 jobs:
   aws:
     runs-on: ubuntu-latest
-    if: github.event.inputs.cloud == "AWS"
+    if: github.event.inputs.cloud == 'AWS'
     steps:
       - name: "Configurar credenciales de AWS"
       uses: aws-actions/configure-aws-credentials@v3
