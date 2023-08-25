@@ -24,8 +24,10 @@ jobs:
           echo '{
               "ServiceArn": "${{ vars.AWS_APPRUNNER_ARN}}",
               "SourceConfiguration": {
-                "ImageRepository": "${{ vars.AWS_REGISTRY}}/${{  vars.AWS_REGISTRY_ALIAS}}/${{ vars.AWS_REPOSITORY }}:latest",
-                "ImageRepositoryType": "ECR_PUBLIC"
+                "ImageRepository": {
+                  "ImageIdentifier": "${{ vars.AWS_REGISTRY}}/${{  vars.AWS_REGISTRY_ALIAS}}/${{ vars.AWS_REPOSITORY }}:latest",
+                  "ImageRepositoryType": "ECR_PUBLIC"
+                }         
               }
           }' > apprunner.json
       - name: Actualizar app en AWS App Runner
