@@ -11,6 +11,7 @@ FROM openjdk:17 AS build
 WORKDIR /app
 COPY build.gradle .
 COPY src src
+COPY gradlew /app/gradlew
 RUN ./gradlew build
 
 # Etapa de ejecución
