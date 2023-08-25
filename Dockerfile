@@ -5,7 +5,7 @@ FROM eclipse-temurin:17 AS build
 WORKDIR /app
 COPY build.gradle .
 COPY src src
-COPY gradlew gradlew
+COPY gradlew app/gradlew
 RUN ./gradlew build
 
 # Etapa de ejecución
