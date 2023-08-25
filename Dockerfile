@@ -1,12 +1,16 @@
-# Usar la imagen de OpenJDK para compilar
-FROM eclipse-temurin:17 AS build
+# Etapa de compilación
+FROM gradle:7.2.0-jdk17 AS build
 
-# Copiar el código fuente y las dependencias al contenedor
+# Configurar el directorio de trabajo
 WORKDIR /app
-COPY build.gradle .
+
+# Copiar los archivos de configuración y dependencias Gradle
+COPY build.gradle settings.gradle ./
 COPY src src
-COPY gradlew app/gradlew
-RUN ./gradlew build
+
+# Ejecutar el comando de compilación
+RUN gradle build --no-daemon
+
 
 # Etapa de ejecución
 FROM eclipse-temurin:17
