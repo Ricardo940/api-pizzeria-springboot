@@ -31,7 +31,7 @@ jobs:
         with:
           registry-type: public
       - name: Grant execute permission to gradlew
-        run: chmod +x /app/gradlew
+        run: chmod +x gradlew
       - name: "Build and push"
         env:
           ECR_REGISTRY: ${{ steps.login-ecr-publico.outputs.registry }}
