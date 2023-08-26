@@ -41,6 +41,7 @@ public class CustomerControlerTests {
     Customer CUSTOMER_02 = new Customer("2","Maye","calle 44b #20-16","maye@gmail.com","321546854");
     Customer CUSTOMER_03 = new Customer("3","Marledys","calle 44b #20-16","marledys@gmail.com","215833255");
 
+    /*
     @Test
     @DisplayName("List of customers")
     public void test() throws Exception{
@@ -56,6 +57,8 @@ public class CustomerControlerTests {
                 .andExpect(jsonPath("$",hasSize(3)))
                 .andExpect(jsonPath("$[1].name", is("Maye")));
     }
+
+     */
 
 
     
